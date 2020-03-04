@@ -1,3 +1,42 @@
 .App {
-  padding-left: 30px;
+  padding: 0px;
+  margin: 0px;
+}
+
+body, html, head, nav, ul {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* .test-container {
+  width: 50vw;
+  margin: auto;
+} */
+
+h1, h2, h3, h4, h5, h6, p {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+button {
+  margin: 15px 25px 15px 25px;
+  background-color:#2f9649;
+	border-radius:4px;
+	border:2px solid #20852c;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 63px;
+	text-decoration:none;
+}
+
+button:hover {
+	background-color:#5cbf2a;
+}
+button:active {
+	position:relative;
+	top:1px;
 }
