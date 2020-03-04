@@ -1,11 +1,10 @@
 import React from "react";
-import { IoIosArrowForward } from 'react-icons/io';
 
 
-const DropdownItem = () => {
+const DropdownItem = (props) => {
   return (
     <div className="dd-item">
-      <a href="#">DropdownItem</a>
+      <a href="#">{props.name}</a>
    </div>
   );
 };

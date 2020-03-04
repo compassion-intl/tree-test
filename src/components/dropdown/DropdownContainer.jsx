@@ -1,13 +1,27 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { IoIosArrowForward } from 'react-icons/io';
-import cssPage from "../dropdown/Dropdown.css";
+import "../dropdown/Dropdown.css";
+import DropdownItem from "../dropdown/DropdownItem";
 
-const DropdownContainer = () => {
-  return (
-    <div className="dd-container">
-      <a href="#">DropdownContainer  <IoIosArrowForward className="arrow" /></a>
-   </div>
-  );
+
+const DropdownContainer = (props) => {
+  
+  useEffect(() => {
+    console.log(props)
+  });
+
+      return (
+        <>
+          <div className="dd-container" id={props.id}>
+            <div className="dd-container-left" >
+              <a href="#" >{props.name}</a>
+            </div>
+            <div className="dd-container-right" >
+              <IoIosArrowForward className="arrow" />
+            </div>
+          </div>
+      </>
+      );
 };
 
 export default DropdownContainer;

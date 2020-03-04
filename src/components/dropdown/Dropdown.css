@@ -6,20 +6,21 @@
     min-width: 200px;
     max-width: 250px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .dd-container:hover {
     background-color: #655c5c;
 }
 
-.dd-container > a {
+.dd-container > .dd-container-left > a {
     text-decoration: none;
     color: white;
-
+    margin-left: 15px;
 }
 
-.arrow {
+.dd-container > .dd-container-right > .arrow {
+    color: white;
     transform: translateY(3px);
 }
 
@@ -31,10 +32,11 @@
     min-width: 200px;
     max-width: 250px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 .dd-item > a {
+    margin-left: 10px;
     text-decoration: none;
     color: white;
 
