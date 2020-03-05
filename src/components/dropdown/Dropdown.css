@@ -1,0 +1,50 @@
+.dd-container {
+    margin-left: 35px;
+    margin-top: 10px;
+}
+
+.dd-container .dd-inner-container:hover {
+    background-color: #655c5c;
+}
+
+.dd-inner-container {
+    padding: 16px 8px 16px 8px;
+    background-color: #373333;
+    min-width: 200px;
+    max-width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dd-container  .dd-container-left  a {
+    text-decoration: none;
+    color: white;
+    margin-left: 15px;
+}
+
+.dd-container  .dd-container-right  .arrow {
+    color: white;
+    transform: translateY(3px);
+}
+
+.dd-item {
+    margin-left: 60px;
+    margin-top: 10px;
+    padding: 16px 8px 16px 8px;
+    background-color: #373333;
+    min-width: 200px;
+    max-width: 250px;
+    display: flex;
+    justify-content: left;
+}
+
+.dd-item > a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: white;
+
+}
+
+.dd-item:hover {
+    background-color: #877b7b;
+}

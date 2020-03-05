@@ -6,9 +6,12 @@ small {
     color: ghostwhite;
     text-align: center;
   }
-   
+  nav {
+    width: 100vw;
+  }
   nav .container {
     display: flex;
+    justify-content: flex-start;
     padding: 0;
     margin-bottom: 0;
   }
@@ -17,10 +20,10 @@ small {
     flex: 1;
     padding: 10px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1em;
     color: cornsilk;
     box-sizing: border-box;
-    background-color: cornflowerblue;
+    background-color: #373333;
     list-style-type: none;
     text-decoration: none;
   }
@@ -33,5 +36,5 @@ small {
   }
    
   .nav-link:hover {
-    color: maroon;
+    color: #FF686C;
   }

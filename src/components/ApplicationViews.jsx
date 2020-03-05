@@ -1,7 +1,9 @@
 import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
-import Test1 from "../components/tests/Test1";
+import Task1 from "../components/tests/Test1";
+import Task2 from "../components/tests/Test2";
+import Task3 from"../components/tests/Test3";
  
 const ApplicationViews = () => {
   return (
@@ -14,9 +16,21 @@ const ApplicationViews = () => {
         }}
       />
       <Route
-        path="/test1"
+        path="/task1"
         render={props => {
-          return <Test1 />;
+          return <Task1 />;
+        }}
+      />
+      <Route
+        path="/task2"
+        render={props => {
+          return <Task2 />;
+        }}
+      />
+      <Route
+        path="/task3"
+        render={props => {
+          return <Task3 />;
         }}
       />
     </>
