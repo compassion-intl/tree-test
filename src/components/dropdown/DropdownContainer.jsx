@@ -5,14 +5,10 @@ import DropdownItem from "../dropdown/DropdownItem";
 
 
 const DropdownContainer = (props) => {
-  
-  useEffect(() => {
-  
-  });
 
+  if(props.type === 1) {
       return (
         <>
-          <div className="dd-container" id={props.id}>
             <div className="dd-inner-container" >
               <div className="dd-container-left" >
                 <a href="#" >{props.name}</a>
@@ -21,9 +17,19 @@ const DropdownContainer = (props) => {
                 <IoIosArrowForward className="arrow" />
               </div>
             </div>
-          </div>
       </>
       );
+  } else {
+    return(
+      <>
+        <div className="dd-inner-container" >
+          <div className="dd-container-left" >
+            <a href="#" >{props.name}</a>
+          </div>
+        </div>
+      </>
+    )
+  }
 };
 
 export default DropdownContainer;
