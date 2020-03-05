@@ -1,6 +1,5 @@
 import React, {useEffect, Component} from "react";
 import DropdownContainer from "../dropdown/DropdownContainer";
-import DropdownItem from "../dropdown/DropdownItem";
 import members from "../../data/info2"
 import FamilyTree from "./FamilyTree";
 

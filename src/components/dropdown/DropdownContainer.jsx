@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { IoIosArrowForward } from 'react-icons/io';
 import "../dropdown/Dropdown.css";
-import DropdownItem from "../dropdown/DropdownItem";
 
 
 const DropdownContainer = (props) => {
