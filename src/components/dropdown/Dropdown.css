@@ -7,14 +7,6 @@
     background-color: #655c5c;
 }
 
-.dd-inner-container {
-    padding: 16px 8px 16px 8px;
-    background-color: #373333;
-    min-width: 200px;
-    max-width: 250px;
-    display: flex;
-    justify-content: space-between;
-}
 
 .dd-container  .dd-container-left  a {
     text-decoration: none;
@@ -47,4 +39,18 @@
 
 .dd-item:hover {
     background-color: #877b7b;
+}
+
+
+.dd-inner-container {
+    padding: 16px 8px 16px 8px;
+    background-color: #373333;
+    min-width: 200px;
+    max-width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.newName {
+    display: none;
 }
