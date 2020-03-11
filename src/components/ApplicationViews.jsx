@@ -1,9 +1,9 @@
 import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
-import Task1 from "../components/tests/Test1";
-import Task2 from "../components/tests/Test2";
-import Task3 from"../components/tests/Test3";
+import Task1 from "../components/tests/Task1";
+import Task2 from "../components/tests/Task2";
+import Task3 from"../components/tests/Task3";
  
 const ApplicationViews = () => {
   return (
