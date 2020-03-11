@@ -1,51 +1,82 @@
-import React from "react";
-import { IoIosArrowForward } from 'react-icons/io';
+import React, { Component } from "react";
+import { IoIosArrowForward } from "react-icons/io";
 import "../dropdown/Dropdown.css";
-import {revealContents} from "../../HelperFunctions";
 
+export default class DropdownContainer extends Component {
+  state = {
+    fakeThing: false
+  };
 
-const DropdownContainer = (props) => {
+  revealContents = event => {
+    // console.log(event.currentTarget)
+    if (event.currentTarget.classList.contains(`dd-inner-container`)) {
+      //Grab all children of clicked node
+      let children = event.currentTarget.parentNode.children;
 
-  // add very first category names here so they show immediately
-  if((props.type === 1 && props.name === 'Sponsor a Child') || (props.type === 1 && props.name === 'Ways to Donate')) {
+      // for every child except the first one, hide or show
+      for (var i = 1; i < children.length; i++) {
+        if (children.item(i).classList.contains("hide")) {
+          children.item(i).classList.remove("hide");
+        } else if (!children.item(i).classList.contains("hide")) {
+          children.item(i).classList.add("hide");
+        }
+        console.log(children.item(i));
+      }
+    }
+  };
+
+  render() {
+    // add top-level category names here so they show immediately
+    if (
+      (this.props.type === 1 && this.props.name === "Sponsor a Child") ||
+      (this.props.type === 1 && this.props.name === "Ways to Donate")
+    ) {
       return (
         <>
-            <div className="dd-inner-container" id={`dd-item-${props.id}`} onClick={(e) => revealContents(e)}>
-              <div className="dd-container-left" >
-                <a href="#" >{props.name}</a>
-              </div>
-              <div className="dd-container-right" >
-                <IoIosArrowForward className="arrow" />
-              </div>
+          <div
+            className="dd-inner-container"
+            id={`dd-item-${this.props.id}`}
+            onClick={e => this.revealContents(e)}
+          >
+            <div className="dd-container-left">
+              <a href="#">{this.props.name}</a>
             </div>
-      </>
-      );
-  } 
-  else if((props.type === 1 && props.name !== 'Sponsor a Child') || (props.type === 1 && props.name !== 'Ways to Donate')) {
-    return (
-      <>
-          <div className="dd-inner-container newName" id={`dd-item-${props.id}`} onClick={(e) => revealContents(e)}>
-            <div className="dd-container-left" >
-              <a href="#" >{props.name}</a>
-            </div>
-            <div className="dd-container-right" >
+            <div className="dd-container-right">
               <IoIosArrowForward className="arrow" />
             </div>
           </div>
-    </>
-    );
-  }
-  else {
-    return(
-      <>
-        <div className="dd-inner-container newName" >
-          <div className="dd-container-left" >
-            <a href="#" >{props.name}</a>
+        </>
+      );
+    } else if (
+      (this.props.type === 1 && this.props.name !== "Sponsor a Child") ||
+      (this.props.type === 1 && this.props.name !== "Ways to Donate")
+    ) {
+      return (
+        <>
+          <div
+            className="dd-inner-container"
+            id={`dd-item-${this.props.id}`}
+            onClick={e => this.revealContents(e)}
+          >
+            <div className="dd-container-left">
+              <a href="#">{this.props.name}</a>
+            </div>
+            <div className="dd-container-right">
+              <IoIosArrowForward className="arrow" />
+            </div>
           </div>
-        </div>
-      </>
-    )
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div className="dd-inner-container">
+            <div className="dd-container-left">
+              <a href="#">{this.props.name}</a>
+            </div>
+          </div>
+        </>
+      );
+    }
   }
-};
-
-export default DropdownContainer;
+}
