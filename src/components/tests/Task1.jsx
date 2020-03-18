@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-import categories from "../../data/info";
-import NavContainer from "./NavContainer";
+import categories from "../../data/info2";
+import NavContainer from "./NavContainer2";
 
 export default class Task1 extends Component {
-  componentDidMount = () => {
-    let allDropdowns = document.querySelectorAll(".dd-inner-container");
-    // console.log(allDropdowns);
-  };
-
   render() {
     return (
       <>
@@ -20,7 +15,12 @@ export default class Task1 extends Component {
           look like readable English.
         </p>
         <hr />
-        <NavContainer categories={categories} />
+        {
+          <NavContainer
+            categories={categories}
+            key={"maindiv" + Math.random()}
+          />
+        }
       </>
     );
   }
