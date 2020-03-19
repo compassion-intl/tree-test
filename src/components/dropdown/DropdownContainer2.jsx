@@ -3,13 +3,13 @@ import { IoIosArrowForward } from "react-icons/io";
 import "../dropdown/Dropdown.css";
 
 export default class DropdownContainer extends Component {
-  componentDidMount = () => {
-    let parentDivs = document.querySelectorAll(".dd-container"),
-      i;
-    for (i = 1; i < parentDivs.length; i++) {
-      parentDivs[i].classList.add("hide");
-    }
-  };
+  //   componentDidMount = () => {
+  //     let parentDivs = document.querySelectorAll(".dd-container"),
+  //       i;
+  //     for (i = 1; i < parentDivs.length; i++) {
+  //       parentDivs[i].classList.add("hide");
+  //     }
+  //   };
 
   revealContents = event => {
     // console.log(event.currentTarget)
@@ -40,6 +40,7 @@ export default class DropdownContainer extends Component {
           <div
             className="dd-inner-container"
             id={`dd-item-${this.props.id}`}
+            key={this.props.id}
             onClick={e => this.revealContents(e)}
           >
             <div className="dd-container-left">
@@ -61,6 +62,7 @@ export default class DropdownContainer extends Component {
             className="dd-inner-container"
             id={`dd-item-${this.props.id}`}
             onClick={e => this.revealContents(e)}
+            key={this.props.id}
           >
             <div className="dd-container-left">
               <a href="#">{this.props.name}</a>
