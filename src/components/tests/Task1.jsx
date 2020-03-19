@@ -15,12 +15,7 @@ export default class Task1 extends Component {
           look like readable English.
         </p>
         <hr />
-        {
-          <NavContainer
-            categories={categories}
-            key={"maindiv" + Math.random()}
-          />
-        }
+        {<NavContainer categories={categories} key={"maindiv, top level"} />}
       </>
     );
   }
