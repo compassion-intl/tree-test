@@ -1,38 +1,75 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./NavBar.css";
+import React, { useState } from "react";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText
+} from "reactstrap";
+import "./nav.css";
 
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
   return (
-    <nav>
-      <ul className="container">
-        <li>
-          <Link className="nav-link" to="/">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link className="nav-link" to="/task1">
-            Task 1
-          </Link>
-        </li>
-        <li>
-          <Link className="nav-link" to="/task2">
-            Task 2
-          </Link>
-        </li>
-        <li>
-          <Link className="nav-link" to="/task3">
-            Task 3
-          </Link>
-        </li>
-        <li>
-          <Link className="nav-link" to="/task4">
-            Task 4
-          </Link>
-        </li>
-      </ul>
-    </nav>
+    <div>
+      <Navbar color="light" light expand="md" id="main-nav">
+        <NavbarBrand href="/">Usability Testing</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Section 1 Tasks
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>
+                  <NavLink className="nav-link" href="/task-1">
+                    Task 1
+                  </NavLink>
+                </DropdownItem>
+                <DropdownItem>
+                  <NavLink className="nav-link" to="/task-2">
+                    Task 2
+                  </NavLink>
+                </DropdownItem>
+                <DropdownItem>
+                  <NavLink className="nav-link" to="/task-3">
+                    Task 3
+                  </NavLink>
+                </DropdownItem>
+                <DropdownItem>
+                  <NavLink className="nav-link" to="/task-4">
+                    Task 4
+                  </NavLink>
+                </DropdownItem>
+                <DropdownItem>
+                  <NavLink className="nav-link" to="/task-5">
+                    Task 5
+                  </NavLink>
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+            <NavItem>
+              <NavLink className="nav-link" href="/admin">
+                Admin
+              </NavLink>
+            </NavItem>
+          </Nav>
+          <NavbarText>{`Location: ${
+            window.location.pathname.split("/")[1]
+          }`}</NavbarText>
+        </Collapse>
+      </Navbar>
+    </div>
   );
 };
 
