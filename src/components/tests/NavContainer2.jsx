@@ -12,7 +12,7 @@ export default class NavContainer extends Component {
     for (let i = 0; i < categories.length; i++) {
       level = 1;
       // Check if object has children. If not, it is a top-level parent node.
-      if (categories[i].childOf === null) {
+      if (!categories[i].childOf) {
         let x = i + 1;
         navItems.push(
           <section

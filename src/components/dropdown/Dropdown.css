@@ -3,10 +3,6 @@
   margin-top: 10px;
 }
 
-.dd-container .dd-inner-container:hover {
-  background-color: #655c5c;
-}
-
 .dd-container .dd-container-left a {
   text-decoration: none;
   color: white;
@@ -35,17 +31,27 @@
   color: white;
 }
 
-.dd-item:hover {
-  background-color: #877b7b;
+.dd-container {
+  background: #333;
+  width: 380px;
 }
 
-.dd-inner-container {
-  padding: 16px 8px 16px 8px;
-  background-color: #373333;
-  min-width: 200px;
-  max-width: 250px;
+.dd-container-link {
   display: flex;
-  justify-content: space-between;
+  padding: 8px 16px;
+  color: #fff;
+}
+
+.dd-container-link:hover {
+  background: rgba(275,275,275,.3);
+}
+
+.dd-container-child {
+  padding-left: 2rem;
+}
+
+.dd-container-title {
+  flex: 1;
 }
 
 .hide {

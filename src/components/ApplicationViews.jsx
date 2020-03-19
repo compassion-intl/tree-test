@@ -4,6 +4,7 @@ import Home from "./home/Home";
 import Task1 from "../components/tests/Task1";
 import Task2 from "../components/tests/Task2";
 import Task3 from"../components/tests/Task3";
+import Task4 from "../components/tests/Task4";
  
 const ApplicationViews = () => {
   return (
@@ -33,6 +34,9 @@ const ApplicationViews = () => {
           return <Task3 />;
         }}
       />
+      <Route path="/task4">
+        <Task4 />
+      </Route>
     </>
   );
 };
