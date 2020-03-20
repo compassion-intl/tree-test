@@ -77,5 +77,14 @@
 }
 
 .dd-container > .dd-inner-container {
-  margin-top: 40px;
+  margin-top: 30px;
+}
+
+.alert-container {
+  padding: 15px;
+  width: 30vw;
+}
+
+.alert-bold-text {
+  font-weight: 600;
 }
