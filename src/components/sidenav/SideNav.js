@@ -5,7 +5,7 @@ class SideNav extends React.Component {
     var children = [];
 
     for (let j = 0; j < this.props.items.length; j++) {
-      if (this.props.items[i].id === this.props.items[j].childOf) {
+      if (this.props.items[i].navId === this.props.items[j].childOf) {
         children.push(j);
       }
     }
@@ -25,7 +25,7 @@ class SideNav extends React.Component {
     });
 
     return (
-      <div className="dd-inner-container" key={this.props.items[i].id}>
+      <div className="dd-inner-container" key={this.props.items[i].navId}>
         <a
           className="dd-container-link"
           href={i}

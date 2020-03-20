@@ -37,22 +37,22 @@ const NavBar = () => {
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink className="nav-link" to="/task-2">
+                  <NavLink className="nav-link" href="/task-2">
                     Task 2
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink className="nav-link" to="/task-3">
+                  <NavLink className="nav-link" href="/task-3">
                     Task 3
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink className="nav-link" to="/task-4">
+                  <NavLink className="nav-link" href="/task-4">
                     Task 4
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink className="nav-link" to="/task-5">
+                  <NavLink className="nav-link" href="/task-5">
                     Task 5
                   </NavLink>
                 </DropdownItem>
