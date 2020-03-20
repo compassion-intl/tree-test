@@ -31,8 +31,7 @@
   color: white;
 }
 
-.dd-container {
-  background: #333;
+.dd-inner-container {
   width: 380px;
 }
 
@@ -40,10 +39,11 @@
   display: flex;
   padding: 8px 16px;
   color: #fff;
+  margin: 20px;
 }
 
 .dd-container-link:hover {
-  background: rgba(275,275,275,.3);
+  background: rgba(275, 275, 275, 0.3);
 }
 
 .dd-container-child {
@@ -56,4 +56,26 @@
 
 .hide {
   display: none;
+}
+
+.dd-container-link {
+  background: rgb(238, 238, 238);
+  padding: 15px 40px;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 5px;
+  color: grey;
+}
+
+.dd-container-link:hover {
+  background: rgba(230, 230, 230, 0.3);
+  text-decoration: none;
+  color: rgb(56, 198, 188);
+}
+
+.dd-container-link svg {
+  transform: translateY(4px);
+}
+
+.dd-container > .dd-inner-container {
+  margin-top: 40px;
 }

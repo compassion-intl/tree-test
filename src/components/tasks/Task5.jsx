@@ -4,7 +4,7 @@ import SideNav from "../sidenav/SideNav";
 import "../sidenav/SideNav.css";
 import API from "../db/API";
 
-const Task2 = () => {
+const Task5 = () => {
   const [hasError, setErrors] = useState(false);
   const [navItems, setNavItems] = useState({});
 
@@ -18,4 +18,4 @@ const Task2 = () => {
   return <SideNav items={navItems} />;
 };
 
-export default Task2;
+export default Task5;
