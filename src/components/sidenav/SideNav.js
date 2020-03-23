@@ -19,7 +19,6 @@ class SideNav extends React.Component {
     document.addEventListener("click", function(e) {
       if (e.target.closest("dd-container-link")) {
         e.preventDefault();
-        alert("yay");
         return;
       }
     });
