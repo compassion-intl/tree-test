@@ -77,5 +77,59 @@
 }
 
 .dd-container > .dd-inner-container {
-  margin-top: 40px;
+  margin-top: 30px;
+}
+
+.alert-container {
+  padding: 15px;
+  width: 50vw;
+}
+
+.alert-bold-text {
+  font-weight: 600;
+}
+
+/* finished button */
+.finish-button-container {
+  position: fixed;
+  bottom: 30px;
+  margin: 0vw 35vw;
+  display: flex;
+  background-color: transparent;
+  width: 30vw;
+  height: 50px;
+  z-index: 1000;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.finish-button-container > p {
+  margin: auto;
+}
+
+.finish-button-container > .finish-button {
+  margin: 4px 6px;
+  min-width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  background-color: rgba(93, 174, 169, 0.536);
+  border: 1px solid transparent;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  text-align: center;
+  color: rgb(23, 52, 50);
+  letter-spacing: 1px;
+}
+
+.finish-button-container > .finish-button:hover {
+  background-color: rgb(127, 196, 192);
+  color: white;
+}
+
+.selected-border {
+  border: 1px solid rgb(56, 198, 188);
+  color: rgb(52, 130, 125);
 }
