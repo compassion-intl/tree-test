@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Collapse,
   Navbar,
@@ -17,6 +17,8 @@ import "./nav.css";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  let userEmail = sessionStorage.getItem("Email");
 
   const toggle = () => setIsOpen(!isOpen);
   return (
@@ -64,9 +66,36 @@ const NavBar = () => {
               </NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>{`Location: ${
-            window.location.pathname.split("/")[1]
-          }`}</NavbarText>
+          {/* <NavbarText>
+            {`Location: ${
+              window.location.pathname.split("/")[1] !== ""
+                ? window.location.pathname.split("/")[1]
+                : "Home"
+            }`}
+          </NavbarText> */}
+          <NavbarText style={{ paddingLeft: "30px" }}>
+            {userEmail !== "" && userEmail !== null ? (
+              <>
+                <p>
+                  {userEmail}
+                  <span
+                    onClick={() => {
+                      sessionStorage.removeItem("Name");
+                      sessionStorage.removeItem("Email");
+                    }}
+                  >
+                    <a href="/" style={{ color: "blue", paddingLeft: "20px" }}>
+                      Logout
+                    </a>
+                  </span>
+                </p>
+              </>
+            ) : (
+              <a href="/" style={{ color: "blue" }}>
+                Login
+              </a>
+            )}
+          </NavbarText>
         </Collapse>
       </Navbar>
     </div>

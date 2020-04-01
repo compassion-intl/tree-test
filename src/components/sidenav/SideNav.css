@@ -133,3 +133,10 @@
   border: 1px solid rgb(56, 198, 188);
   color: rgb(52, 130, 125);
 }
+
+/* HOME PAGE/LOGIN */
+#signup-form {
+  width: 30%;
+  margin: auto;
+  margin-top: 20vh;
+}

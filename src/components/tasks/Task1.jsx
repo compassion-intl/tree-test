@@ -29,12 +29,15 @@ const Task1 = () => {
   const [startModal, setStartModal] = useState(false);
   const [endModal, setEndModal] = useState(false);
   const [alert, setAlert] = useState(false);
-  const [startTime, setStartTime] = useState(new Date().getTime());
-  const [endTime, setEndTime] = useState(new Date().getTime());
+  const [seconds, setSeconds] = useState(0);
+  const [isActiveTimer, setIsActiveTimer] = useState(false);
   const [doneButton, setDoneButton] = useState(false);
 
   const toggle = () => setStartModal(!startModal);
   const toggleAlert = () => setAlert(!alert);
+  function toggleActiveTimer() {
+    setIsActiveTimer(!isActiveTimer);
+  }
 
   useEffect(() => {
     API.getNavItems()
@@ -47,9 +50,34 @@ const Task1 = () => {
     HF.foundTheItem(itemToFind);
   }, []);
 
+  useEffect(() => {
+    let interval = null;
+    if (isActiveTimer) {
+      interval = setInterval(() => {
+        setSeconds(seconds => seconds + 1);
+      }, 1000);
+    } else if (!isActiveTimer && seconds !== 0) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [isActiveTimer, seconds]);
+
   let triggerFinish = () => {
     setEndModal(true);
-    setEndTime(new Date().getTime());
+    toggleActiveTimer();
+    submitTaskData();
+  };
+
+  let submitTaskData = () => {
+    // let elapsedTime;
+    const taskData = {
+      userId: "",
+      section: 1,
+      taskNumber: window.location.pathname.split("/")[1],
+      timeToCompletion: seconds + 1
+    };
+
+    API.taskComplete(taskData);
   };
 
   return (
@@ -59,7 +87,7 @@ const Task1 = () => {
         isOpen={startModal}
         centered={true}
         onClosed={() => {
-          setStartTime(new Date().getTime());
+          toggleActiveTimer();
           setAlert(true);
         }}
       >
