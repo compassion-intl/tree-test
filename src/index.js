@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import * as firebase from "firebase";
+import * as firebase from "firebase/app";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA2x2-Bj-FhzSW1OIBf9o69L370Qy2dqFQ",

@@ -14,6 +14,7 @@ import {
   NavbarText
 } from "reactstrap";
 import "./nav.css";
+import { logout } from "../login/LoginHandler";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,7 +84,11 @@ const NavBar = () => {
                       sessionStorage.removeItem("Email");
                     }}
                   >
-                    <a href="/" style={{ color: "blue", paddingLeft: "20px" }}>
+                    <a
+                      href="/"
+                      style={{ color: "blue", paddingLeft: "20px" }}
+                      onClick={logout}
+                    >
                       Logout
                     </a>
                   </span>
