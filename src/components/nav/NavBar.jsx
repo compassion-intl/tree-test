@@ -17,7 +17,6 @@ import "./nav.css";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   let userEmail = sessionStorage.getItem("Email");
 
   const toggle = () => setIsOpen(!isOpen);

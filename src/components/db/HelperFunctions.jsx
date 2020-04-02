@@ -1,3 +1,5 @@
+import API from "../db/API";
+
 const HF = {
   toggleItemBorder: child => {
     if (child) {
@@ -24,9 +26,24 @@ const HF = {
         let childTitle = child.childNodes[0].childNodes[0].textContent;
 
         clickedItems.push(childTitle);
-        console.log(clickedItems);
+        return clickedItems;
       }
+      return clickedItems;
     });
+    return clickedItems;
+  },
+
+  submitTaskData: (userId, seconds, clickedItems) => {
+    // let elapsedTime;
+    const taskData = {
+      userId: userId,
+      section: "Existing Structure",
+      taskNumber: window.location.pathname.split("/")[1],
+      timeToCompletion: seconds + 1,
+      itemsClicked: clickedItems
+    };
+
+    API.taskComplete(taskData);
   }
 };
 
