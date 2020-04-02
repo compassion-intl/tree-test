@@ -135,8 +135,34 @@
 }
 
 /* HOME PAGE/LOGIN */
-#signup-form {
-  width: 30%;
+#login-form,
+#register-form {
+  width: 400px;
   margin: auto;
   margin-top: 20vh;
+}
+
+#login-form > input,
+#register-form > input {
+  margin-bottom: 20px;
+}
+
+#login-form > input[type="submit"],
+#register-form > input[type="submit"] {
+  background-color: rgba(93, 174, 169, 0.536);
+}
+
+#login-form > input[type="submit"]:hover,
+#register-form > input[type="submit"]:hover {
+  background-color: rgba(133, 205, 200, 0.536);
+}
+
+label {
+  margin-bottom: -4px;
+  margin-left: 3px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(106, 106, 106);
 }
