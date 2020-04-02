@@ -9,7 +9,8 @@ import {
   ModalFooter,
   Form,
   Button,
-  Input
+  Input,
+  Label
 } from "reactstrap";
 
 export default class Register extends Component {
@@ -51,31 +52,34 @@ export default class Register extends Component {
     return (
       <>
         <div className="auth-container">
-          <Form className="register-form">
+          <Form className="register-form" id="register-form">
+            <Label for="Full Name">Full Name</Label>
             <Input
               type="text"
-              label="Full Name"
+              name="Full Name"
               placeholder="Full Name"
               onChange={e => this.setState({ username: e.target.value })}
             />
+            <Label for="Email Address">Work Email</Label>
             <Input
               type="email"
-              label="Email Address"
+              name="Email Address"
               placeholder="username@email.com"
               onChange={e => this.setState({ email: e.target.value })}
             />
+            <Label for="Password">Password</Label>
             <Input
               type="password"
-              label="Password"
+              name="Password"
               placeholder="*******"
               onChange={e => this.setState({ password: e.target.value })}
             />
             <Input
               type="submit"
-              content="Register"
+              value="Register"
               onClick={e => this.submit(e)}
             />
-            <p className="auth-message">
+            <p className="auth-message" style={{ textAlign: "center" }}>
               Already registered? <Link to="/">Log In</Link>
             </p>
           </Form>

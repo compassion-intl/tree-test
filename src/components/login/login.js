@@ -9,7 +9,8 @@ import {
   ModalFooter,
   Form,
   Button,
-  Input
+  Input,
+  Label
 } from "reactstrap";
 import "firebase/auth";
 
@@ -43,25 +44,23 @@ export default class Login extends Component {
     return (
       <>
         <div className="login-container">
-          <Form className="login-form">
+          <Form className="login-form" id="login-form">
+            <Label for="Email Address">Work Email</Label>
             <Input
               type="email"
-              label="Email Address"
+              name="Email Address"
               placeholder="username@email.com"
               onChange={e => this.setState({ email: e.target.value })}
             />
+            <Label for="Password">Password</Label>
             <Input
               type="password"
-              label="Password"
+              name="Password"
               placeholder="*******"
               onChange={e => this.setState({ password: e.target.value })}
             />
-            <Input
-              type="submit"
-              content="Login"
-              onClick={e => this.submit(e)}
-            />
-            <p className="auth--message">
+            <Input type="submit" value="Login" onClick={e => this.submit(e)} />
+            <p className="auth--message" style={{ textAlign: "center" }}>
               Not registered yet? <Link to="/register">Sign Up</Link>
             </p>
           </Form>
