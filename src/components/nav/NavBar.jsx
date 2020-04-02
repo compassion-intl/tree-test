@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
 import {
   Collapse,
   Navbar,
@@ -14,96 +14,99 @@ import {
   NavbarText
 } from "reactstrap";
 import "./nav.css";
-import { logout } from "../login/LoginHandler";
+import {
+  logout,
+  getUserFromLocalStorage,
+  getUser
+} from "../login/LoginHandler";
 
-const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  let userEmail = sessionStorage.getItem("Email");
+class NavBar extends Component {
+  state = {
+    isOpen: false,
+    userInfo: []
+  };
 
-  const toggle = () => setIsOpen(!isOpen);
-  return (
-    <div>
-      <Navbar color="light" light expand="md" id="main-nav">
-        <NavbarBrand href="/">Usability Testing</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Section 1 Tasks
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  <NavLink className="nav-link" href="/task-1">
-                    Task 1
-                  </NavLink>
-                </DropdownItem>
-                <DropdownItem>
-                  <NavLink className="nav-link" href="/task-2">
-                    Task 2
-                  </NavLink>
-                </DropdownItem>
-                <DropdownItem>
-                  <NavLink className="nav-link" href="/task-3">
-                    Task 3
-                  </NavLink>
-                </DropdownItem>
-                <DropdownItem>
-                  <NavLink className="nav-link" href="/task-4">
-                    Task 4
-                  </NavLink>
-                </DropdownItem>
-                <DropdownItem>
-                  <NavLink className="nav-link" href="/task-5">
-                    Task 5
-                  </NavLink>
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            <NavItem>
-              <NavLink className="nav-link" href="/admin">
-                Admin
-              </NavLink>
-            </NavItem>
-          </Nav>
-          {/* <NavbarText>
-            {`Location: ${
-              window.location.pathname.split("/")[1] !== ""
-                ? window.location.pathname.split("/")[1]
-                : "Home"
-            }`}
-          </NavbarText> */}
-          <NavbarText style={{ paddingLeft: "30px" }}>
-            {userEmail !== "" && userEmail !== null ? (
-              <>
-                <p>
-                  {userEmail}
-                  <span
-                    onClick={() => {
-                      sessionStorage.removeItem("Name");
-                      sessionStorage.removeItem("Email");
-                    }}
-                  >
-                    <a
-                      href="/"
-                      style={{ color: "blue", paddingLeft: "20px" }}
-                      onClick={logout}
+  componentDidMount = () => {
+    this.setState({ userInfo: getUserFromLocalStorage() });
+  };
+
+  toggle = () => this.setState({ isOpen: !this.state.isOpen });
+  render() {
+    return (
+      <div>
+        <Navbar color="light" light expand="md" id="main-nav">
+          <NavbarBrand href="/">Usability Testing</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="mr-auto" navbar>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  Section 1 Tasks
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem>
+                    <NavLink className="nav-link" href="/task-1">
+                      Task 1
+                    </NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink className="nav-link" href="/task-2">
+                      Task 2
+                    </NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink className="nav-link" href="/task-3">
+                      Task 3
+                    </NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink className="nav-link" href="/task-4">
+                      Task 4
+                    </NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink className="nav-link" href="/task-5">
+                      Task 5
+                    </NavLink>
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+              <NavItem>
+                <NavLink className="nav-link" href="/admin">
+                  Admin
+                </NavLink>
+              </NavItem>
+            </Nav>
+            <NavbarText style={{ paddingLeft: "30px" }}>
+              {this.state.userInfo !== null ? (
+                <>
+                  <p>
+                    {this.state.userInfo.email}
+                    <span
+                      onClick={() => {
+                        sessionStorage.removeItem("Name");
+                        sessionStorage.removeItem("Email");
+                      }}
                     >
-                      Logout
-                    </a>
-                  </span>
-                </p>
-              </>
-            ) : (
-              <a href="/" style={{ color: "blue" }}>
-                Login
-              </a>
-            )}
-          </NavbarText>
-        </Collapse>
-      </Navbar>
-    </div>
-  );
-};
+                      <a
+                        href="/"
+                        style={{ color: "blue", paddingLeft: "20px" }}
+                        onClick={logout}
+                      >
+                        Logout
+                      </a>
+                    </span>
+                  </p>
+                </>
+              ) : (
+                <></>
+              )}
+            </NavbarText>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
+  }
+}
 
 export default NavBar;

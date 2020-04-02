@@ -17,17 +17,25 @@ export default class Register extends Component {
     email: "",
     username: "",
     password: "",
-    role: "User",
     modal: false,
     error: []
   };
 
   submit = e => {
     e.preventDefault();
-    register(this.state)
+
+    let userObject = {
+      email: this.state.email,
+      username: this.state.username,
+      password: this.state.password,
+      role: "User"
+    };
+    register(userObject)
       .then(newUser => {
-        // this.props.onRegister(newUser);
-        // this.props.history.push("/task-1");
+        this.props.onRegister(newUser);
+      })
+      .then(() => {
+        this.props.history.push("/task-1");
       })
       .catch(error => {
         this.setState({ error: error.message });
