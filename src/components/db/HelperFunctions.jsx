@@ -33,10 +33,9 @@ const HF = {
     return clickedItems;
   },
 
-  submitTaskData: (userId, seconds, clickedItems) => {
-    // let elapsedTime;
+  submitTaskData: (userEyeDee, seconds, clickedItems) => {
     const taskData = {
-      userId: userId,
+      userId: JSON.parse(userEyeDee).email,
       section: "Existing Structure",
       taskNumber: window.location.pathname.split("/")[1],
       timeToCompletion: seconds + 1,

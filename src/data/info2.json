@@ -7,7 +7,7 @@
     },
     {
       "navId": 2,
-      "name": "View Longest Waiting",
+      "name": "View Longest Waiting Children",
       "childOf": 1
     },
     {
@@ -17,28 +17,268 @@
     },
     {
       "navId": 4,
-      "name": "Why Sponsor?",
+      "name": "Why Sponsor a Child?",
       "childOf": 1
     },
     {
       "navId": 5,
-      "name": "testSub",
-      "childOf": 4
+      "name": "Financial Integrity",
+      "childOf": 1
     },
     {
       "navId": 6,
+      "name": "Search for a Child",
+      "childOf": 1
+    },
+    {
+      "navId": 7,
+      "name": "Select a Child For Me",
+      "childOf": 1
+    },
+    {
+      "navId": 8,
+      "name": "Children Sponsored Today",
+      "childOf": 1
+    },
+    {
+      "navId": 9,
+      "name": "Child Sponsorship Reviews",
+      "childOf": 1
+    },
+    {
+      "navId": 10,
+      "name": "Child Sponsorship FAQ",
+      "childOf": 1
+    },
+    {
+      "navId": 11,
       "name": "Ways to Donate",
       "childOf": 0
     },
     {
-      "navId": 7,
+      "navId": 12,
       "name": "Meet Critical Needs",
-      "childOf": 6
+      "childOf": 11
     },
     {
-      "navId": 8,
-      "name": "Help Babies",
-      "childOf": 6
+      "navId": 13,
+      "name": "Help Babies and Mothers",
+      "childOf": 11
+    },
+    {
+      "navId": 14,
+      "name": "Develop a Future Leader",
+      "childOf": 11
+    },
+    {
+      "navId": 15,
+      "name": "Donate to a Cause",
+      "childOf": 11
+    },
+    {
+      "navId": 16,
+      "name": "Shop Our Gift Catalog",
+      "childOf": 11
+    },
+    {
+      "navId": 17,
+      "name": "Financial Integrity",
+      "childOf": 11
+    },
+    {
+      "navId": 18,
+      "name": "Online Fundraising",
+      "childOf": 11
+    },
+    {
+      "navId": 19,
+      "name": "Volunteer",
+      "childOf": 11
+    },
+    {
+      "navId": 20,
+      "name": "Match Your Gift",
+      "childOf": 11
+    },
+    {
+      "navId": 21,
+      "name": "Estate and Asset Giving",
+      "childOf": 11
+    },
+    {
+      "navId": 22,
+      "name": "Other Ways to Give",
+      "childOf": 11
+    },
+    {
+      "navId": 23,
+      "name": "Develop a Future Leader",
+      "childOf": 11
+    },
+    {
+      "navId": 24,
+      "name": "Get Involved",
+      "childOf": 0
+    },
+    {
+      "navId": 25,
+      "name": "Donate",
+      "childOf": 24
+    },
+    {
+      "navId": 26,
+      "name": "Volunteer",
+      "childOf": 24
+    },
+    {
+      "navId": 27,
+      "name": "Pray",
+      "childOf": 24
+    },
+    {
+      "navId": 28,
+      "name": "Write Your Child",
+      "childOf": 24
+    },
+    {
+      "navId": 29,
+      "name": "Visit Your Child",
+      "childOf": 24
+    },
+    {
+      "navId": 30,
+      "name": "Web Banners",
+      "childOf": 24
+    },
+    {
+      "navId": 31,
+      "name": "Compassion Sunday",
+      "childOf": 24
+    },
+    {
+      "navId": 32,
+      "name": "Churches",
+      "childOf": 24
+    },
+    {
+      "navId": 33,
+      "name": "The Village Movement",
+      "childOf": 24
+    },
+    {
+      "navId": 34,
+      "name": "Bloggers",
+      "childOf": 24
+    },
+    {
+      "navId": 35,
+      "name": "Businesses",
+      "childOf": 24
+    },
+    {
+      "navId": 36,
+      "name": "Speakers and Artists",
+      "childOf": 24
+    },
+    {
+      "navId": 37,
+      "name": "Events and Festivals",
+      "childOf": 24
+    },
+    {
+      "navId": 38,
+      "name": "About Us",
+      "childOf": 0
+    },
+    {
+      "navId": 39,
+      "name": "What Makes Us Distinct",
+      "childOf": 38
+    },
+    {
+      "navId": 40,
+      "name": "Who We Are",
+      "childOf": 38
+    },
+    {
+      "navId": 41,
+      "name": "What We Do",
+      "childOf": 38
+    },
+    {
+      "navId": 42,
+      "name": "Where We Work",
+      "childOf": 38
+    },
+    {
+      "navId": 43,
+      "name": "Press Center",
+      "childOf": 38
+    },
+    {
+      "navId": 44,
+      "name": "Financial Integrity",
+      "childOf": 38
+    },
+    {
+      "navId": 45,
+      "name": "Careers",
+      "childOf": 38
+    },
+    {
+      "navId": 46,
+      "name": "Tour Our Ministry Center",
+      "childOf": 38
+    },
+    {
+      "navId": 47,
+      "name": "FAQ",
+      "childOf": 38
+    },
+    {
+      "navId": 48,
+      "name": "For Sponsors",
+      "childOf": 0
+    },
+    {
+      "navId": 49,
+      "name": "Write",
+      "childOf": 48
+    },
+    {
+      "navId": 50,
+      "name": "Give",
+      "childOf": 48
+    },
+    {
+      "navId": 51,
+      "name": "Pray",
+      "childOf": 48
+    },
+    {
+      "navId": 52,
+      "name": "Visit",
+      "childOf": 48
+    },
+    {
+      "navId": 53,
+      "name": "Stories",
+      "childOf": 48
+    },
+    {
+      "navId": 54,
+      "name": "Crisis Updates",
+      "childOf": 48
+    },
+    {
+      "navId": 55,
+      "name": "More Resources",
+      "childOf": 48
+    },
+    {
+      "navId": 56,
+      "name": "Blog",
+      "childOf": 0
     }
   ]
 }

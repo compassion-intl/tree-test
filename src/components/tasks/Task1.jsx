@@ -33,14 +33,17 @@ const Task1 = () => {
   const [isActiveTimer, setIsActiveTimer] = useState(false);
   const [doneButton, setDoneButton] = useState(false);
   const [clickedItems, setClickedItems] = useState([]);
+  const initialState = () => window.localStorage.getItem("user") || null;
+  const [userInfo, setUserInfo] = useState(initialState);
 
   const toggle = () => setStartModal(!startModal);
   const toggleAlert = () => setAlert(!alert);
+
   function toggleActiveTimer() {
     setIsActiveTimer(!isActiveTimer);
   }
 
-  let userId;
+  useEffect(() => window.localStorage.setItem("user", userInfo), [userInfo]);
 
   useEffect(() => {
     API.getNavItems()
@@ -55,7 +58,6 @@ const Task1 = () => {
   }, []);
 
   useEffect(() => {
-    userId = sessionStorage.getItem("Name");
     let interval = null;
     if (isActiveTimer) {
       interval = setInterval(() => {
@@ -70,7 +72,8 @@ const Task1 = () => {
   let triggerFinish = () => {
     setEndModal(true);
     toggleActiveTimer();
-    HF.submitTaskData(userId, seconds, clickedItems);
+    console.log(userInfo);
+    HF.submitTaskData(userInfo, seconds, clickedItems);
   };
 
   return (

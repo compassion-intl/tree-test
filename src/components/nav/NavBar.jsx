@@ -23,7 +23,8 @@ import {
 class NavBar extends Component {
   state = {
     isOpen: false,
-    userInfo: []
+    userInfo: [],
+    userId: JSON.parse(window.localStorage.getItem("user")).email
   };
 
   componentDidMount = () => {
@@ -78,10 +79,10 @@ class NavBar extends Component {
               </NavItem>
             </Nav>
             <NavbarText style={{ paddingLeft: "30px" }}>
-              {this.state.userInfo !== null ? (
+              {this.state.userId !== null ? (
                 <>
                   <p>
-                    {this.state.userInfo.email}
+                    {this.state.userId}
                     <span
                       onClick={() => {
                         sessionStorage.removeItem("Name");
