@@ -150,11 +150,13 @@
 #login-form > input[type="submit"],
 #register-form > input[type="submit"] {
   background-color: rgba(93, 174, 169, 0.536);
+  color: white;
 }
 
 #login-form > input[type="submit"]:hover,
 #register-form > input[type="submit"]:hover {
   background-color: rgba(133, 205, 200, 0.536);
+  color: rgba(32, 80, 77, 0.536);
 }
 
 label {
@@ -165,4 +167,13 @@ label {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: rgb(106, 106, 106);
+}
+
+#main-nav .collapse.navbar-collapse {
+  margin-left: 20%;
+}
+
+.dropdown-menu.dropdown-menu-right.show {
+  transform: translateX(20px);
+  transform: translateY();
 }

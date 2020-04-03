@@ -33,7 +33,7 @@ const Task1 = () => {
   const [isActiveTimer, setIsActiveTimer] = useState(false);
   const [doneButton, setDoneButton] = useState(false);
   const [clickedItems, setClickedItems] = useState([]);
-  const initialState = () => window.localStorage.getItem("user") || null;
+  const initialState = () => window.sessionStorage.getItem("user") || null;
   const [userInfo, setUserInfo] = useState(initialState);
 
   const toggle = () => setStartModal(!startModal);
@@ -43,7 +43,7 @@ const Task1 = () => {
     setIsActiveTimer(!isActiveTimer);
   }
 
-  useEffect(() => window.localStorage.setItem("user", userInfo), [userInfo]);
+  useEffect(() => window.sessionStorage.setItem("user", userInfo), [userInfo]);
 
   useEffect(() => {
     API.getNavItems()

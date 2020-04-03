@@ -14,21 +14,32 @@ import {
   NavbarText
 } from "reactstrap";
 import "./nav.css";
-import {
-  logout,
-  getUserFromLocalStorage,
-  getUser
-} from "../login/LoginHandler";
+import { logout, getUserFromSessionStorage } from "../login/LoginHandler";
 
 class NavBar extends Component {
   state = {
     isOpen: false,
-    userInfo: [],
-    userId: JSON.parse(window.localStorage.getItem("user")).email
+    userInfo: []
+    // userId: JSON.parse(window.sessionStorage.getItem("user")).email
+  };
+
+  checkIfAdmin = () => {
+    if (this.state.userInfo !== [] && this.state.userInfo !== null) {
+      if (this.state.userInfo.role === "Admin") {
+        return (
+          <NavLink className="nav-link" href="/admin">
+            Admin
+          </NavLink>
+        );
+      }
+    }
   };
 
   componentDidMount = () => {
-    this.setState({ userInfo: getUserFromLocalStorage() });
+    this.setState({ userInfo: getUserFromSessionStorage() });
+  };
+  componentDidUpdate = () => {
+    console.log(this.state.userInfo);
   };
 
   toggle = () => this.setState({ isOpen: !this.state.isOpen });
@@ -36,7 +47,7 @@ class NavBar extends Component {
     return (
       <div>
         <Navbar color="light" light expand="md" id="main-nav">
-          <NavbarBrand href="/">Usability Testing</NavbarBrand>
+          <NavbarBrand href="/">Tree Testing</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -72,32 +83,33 @@ class NavBar extends Component {
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-              <NavItem>
-                <NavLink className="nav-link" href="/admin">
-                  Admin
-                </NavLink>
-              </NavItem>
+              <NavItem>{this.checkIfAdmin()}</NavItem>
             </Nav>
             <NavbarText style={{ paddingLeft: "30px" }}>
               {this.state.userId !== null ? (
                 <>
-                  <p>
-                    {this.state.userId}
-                    <span
-                      onClick={() => {
-                        sessionStorage.removeItem("Name");
-                        sessionStorage.removeItem("Email");
-                      }}
-                    >
-                      <a
-                        href="/"
-                        style={{ color: "blue", paddingLeft: "20px" }}
-                        onClick={logout}
+                  {this.state.userInfo !== null &&
+                  this.state.userInfo !== {} ? (
+                    <p>
+                      {this.state.userInfo.email}
+                      <span
+                        onClick={() => {
+                          sessionStorage.removeItem("Name");
+                          sessionStorage.removeItem("Email");
+                        }}
                       >
-                        Logout
-                      </a>
-                    </span>
-                  </p>
+                        <a
+                          href="/"
+                          style={{ color: "blue", paddingLeft: "20px" }}
+                          onClick={logout}
+                        >
+                          Logout
+                        </a>
+                      </span>
+                    </p>
+                  ) : (
+                    <></>
+                  )}
                 </>
               ) : (
                 <></>
