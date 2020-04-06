@@ -108,7 +108,6 @@ const Task1 = () => {
         <Alert color="info" isOpen={alert}>
           <h5>{taskNum}</h5>
           <p>{taskText}</p>
-          <p>{seconds}</p>
         </Alert>
       </div>
       <SideNav items={navItems} />

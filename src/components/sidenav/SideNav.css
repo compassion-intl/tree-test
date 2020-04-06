@@ -198,3 +198,20 @@ ul.mr-auto.navbar-nav li {
 #main-nav span > a {
   color: #749fce;
 }
+
+#admin-view {
+  max-width: 75vw;
+  margin-left: 15px;
+}
+
+.tab-content {
+  border: 1px solid #e4e4e4;
+  border-top: 1px solid white;
+  padding: 40px;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: blue 3px;
+}
+
+#admin-view a.active.nav-link {
+  color: #20c997;
+}

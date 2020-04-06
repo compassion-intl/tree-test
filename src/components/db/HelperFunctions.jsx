@@ -44,6 +44,23 @@ const HF = {
 
     API.taskComplete(taskData);
   },
+
+  calculateAverages: (task) => {
+    let taskAvg;
+    if (task !== undefined && task.length > 0) {
+      let taskSum = task.reduce((a, b) => {
+        return {
+          timeToCompletion:
+            parseFloat(a.timeToCompletion) + parseFloat(b.timeToCompletion),
+        };
+      });
+
+      taskAvg = (taskSum.timeToCompletion / task.length).toFixed(2);
+      return taskAvg;
+    } else {
+      return "--  ";
+    }
+  },
 };
 
 export default HF;
