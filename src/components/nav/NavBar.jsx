@@ -11,7 +11,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText
+  NavbarText,
 } from "reactstrap";
 import "./nav.css";
 import { logout, getUserFromSessionStorage } from "../login/LoginHandler";
@@ -19,7 +19,7 @@ import { logout, getUserFromSessionStorage } from "../login/LoginHandler";
 class NavBar extends Component {
   state = {
     isOpen: false,
-    userInfo: []
+    userInfo: [],
     // userId: JSON.parse(window.sessionStorage.getItem("user")).email
   };
 
@@ -100,7 +100,7 @@ class NavBar extends Component {
                       >
                         <a
                           href="/"
-                          style={{ color: "blue", paddingLeft: "20px" }}
+                          style={{ paddingLeft: "20px" }}
                           onClick={logout}
                         >
                           Logout
