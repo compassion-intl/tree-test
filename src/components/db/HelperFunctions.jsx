@@ -1,7 +1,7 @@
 import API from "../db/API";
 
 const HF = {
-  toggleItemBorder: child => {
+  toggleItemBorder: (child) => {
     if (child) {
       switch (child.childNodes[0].classList.contains("selected-border")) {
         case true:
@@ -15,10 +15,10 @@ const HF = {
     }
   },
 
-  foundTheItem: item => {
+  foundTheItem: (item) => {
     let clickedItems = [];
     let child;
-    document.addEventListener("click", e => {
+    document.addEventListener("click", (e) => {
       child = e.target.closest(".dd-inner-container");
 
       if (child) {
@@ -38,12 +38,12 @@ const HF = {
       userId: JSON.parse(userEyeDee).email,
       section: "Existing Structure",
       taskNumber: window.location.pathname.split("/")[1],
-      timeToCompletion: seconds + 1,
-      itemsClicked: clickedItems
+      timeToCompletion: seconds.toFixed(1),
+      itemsClicked: clickedItems,
     };
 
     API.taskComplete(taskData);
-  }
+  },
 };
 
 export default HF;

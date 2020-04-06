@@ -38,9 +38,6 @@ class NavBar extends Component {
   componentDidMount = () => {
     this.setState({ userInfo: getUserFromSessionStorage() });
   };
-  componentDidUpdate = () => {
-    console.log(this.state.userInfo);
-  };
 
   toggle = () => this.setState({ isOpen: !this.state.isOpen });
   render() {

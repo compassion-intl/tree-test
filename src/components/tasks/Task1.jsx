@@ -10,13 +10,10 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter
+  ModalFooter,
 } from "reactstrap";
 
 const Task1 = () => {
-  // change itemToFind to the name of what the user is searching for
-  const itemToFind = "Ways to Donate";
-
   // change taskText to the instructions given to the user for this task
   const [taskText, setTaskText] = useState(
     "Where would you go to find out how to Sponsor a Child?"
@@ -47,10 +44,10 @@ const Task1 = () => {
 
   useEffect(() => {
     API.getNavItems()
-      .then(e => {
+      .then((e) => {
         setNavItems(e);
       })
-      .catch(err => setErrors(err));
+      .catch((err) => setErrors(err));
 
     setStartModal(true);
     let clickedItemsArray = HF.foundTheItem();
@@ -61,8 +58,8 @@ const Task1 = () => {
     let interval = null;
     if (isActiveTimer) {
       interval = setInterval(() => {
-        setSeconds(seconds => seconds + 1);
-      }, 1000);
+        setSeconds((seconds) => seconds + 0.1);
+      }, 100);
     } else if (!isActiveTimer && seconds !== 0) {
       clearInterval(interval);
     }
@@ -72,7 +69,6 @@ const Task1 = () => {
   let triggerFinish = () => {
     setEndModal(true);
     toggleActiveTimer();
-    console.log(userInfo);
     HF.submitTaskData(userInfo, seconds, clickedItems);
   };
 
@@ -112,6 +108,7 @@ const Task1 = () => {
         <Alert color="info" isOpen={alert}>
           <h5>{taskNum}</h5>
           <p>{taskText}</p>
+          <p>{seconds}</p>
         </Alert>
       </div>
       <SideNav items={navItems} />
