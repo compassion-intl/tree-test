@@ -10,13 +10,10 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter
+  ModalFooter,
 } from "reactstrap";
 
 const Task1 = () => {
-  // change itemToFind to the name of what the user is searching for
-  const itemToFind = "Ways to Donate";
-
   // change taskText to the instructions given to the user for this task
   const [taskText, setTaskText] = useState(
     "Where would you go to find out how to Sponsor a Child?"
@@ -33,21 +30,24 @@ const Task1 = () => {
   const [isActiveTimer, setIsActiveTimer] = useState(false);
   const [doneButton, setDoneButton] = useState(false);
   const [clickedItems, setClickedItems] = useState([]);
+  const initialState = () => window.sessionStorage.getItem("user") || null;
+  const [userInfo, setUserInfo] = useState(initialState);
 
   const toggle = () => setStartModal(!startModal);
   const toggleAlert = () => setAlert(!alert);
+
   function toggleActiveTimer() {
     setIsActiveTimer(!isActiveTimer);
   }
 
-  let userId;
+  useEffect(() => window.sessionStorage.setItem("user", userInfo), [userInfo]);
 
   useEffect(() => {
     API.getNavItems()
-      .then(e => {
+      .then((e) => {
         setNavItems(e);
       })
-      .catch(err => setErrors(err));
+      .catch((err) => setErrors(err));
 
     setStartModal(true);
     let clickedItemsArray = HF.foundTheItem();
@@ -55,12 +55,11 @@ const Task1 = () => {
   }, []);
 
   useEffect(() => {
-    userId = sessionStorage.getItem("Name");
     let interval = null;
     if (isActiveTimer) {
       interval = setInterval(() => {
-        setSeconds(seconds => seconds + 1);
-      }, 1000);
+        setSeconds((seconds) => seconds + 0.1);
+      }, 100);
     } else if (!isActiveTimer && seconds !== 0) {
       clearInterval(interval);
     }
@@ -70,7 +69,7 @@ const Task1 = () => {
   let triggerFinish = () => {
     setEndModal(true);
     toggleActiveTimer();
-    HF.submitTaskData(userId, seconds, clickedItems);
+    HF.submitTaskData(userInfo, seconds, clickedItems);
   };
 
   return (
@@ -109,6 +108,7 @@ const Task1 = () => {
         <Alert color="info" isOpen={alert}>
           <h5>{taskNum}</h5>
           <p>{taskText}</p>
+          <p>{seconds}</p>
         </Alert>
       </div>
       <SideNav items={navItems} />

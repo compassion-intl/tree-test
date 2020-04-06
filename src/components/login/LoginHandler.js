@@ -3,8 +3,8 @@ import "firebase/auth";
 
 const url = "https://usability-tree-testing.firebaseio.com/users.json";
 
-const setUserInLocalStorage = user => {
-  localStorage.setItem("user", JSON.stringify(user));
+const setUserInSessionStorage = user => {
+  sessionStorage.setItem("user", JSON.stringify(user));
 };
 
 // Register a new user with Firebase
@@ -51,15 +51,15 @@ export const saveUserToJsonServer = newUser => {
       })
       // Take the new user object and store that in local storage for later access.
       .then(user => {
-        setUserInLocalStorage(user);
+        setUserInSessionStorage(user);
         return user;
       })
   );
 };
 
 // take the data about the user that has been saved in local storage on login or register and return it for use elsewhere
-export const getUserFromLocalStorage = () => {
-  const user = localStorage.getItem("user");
+export const getUserFromSessionStorage = () => {
+  const user = sessionStorage.getItem("user");
   // if there isn't a user in local storage, do nothing. if there is, return it in JSON format
   if (!user) return null;
   return JSON.parse(user);
@@ -74,7 +74,7 @@ export const getUser = userId => {
 
 // Logout, and on logout, clear the users info from local storage
 export const logout = () => {
-  localStorage.removeItem("user");
+  sessionStorage.removeItem("user");
 };
 
 // Login existing users
@@ -103,13 +103,14 @@ export const login = (email, password) => {
         let user = {
           email: r[0].email,
           username: r[0].username,
-          id: r[0].id
+          id: r[0].id,
+          role: r[0].role
         };
         return user;
       })
       // Then use the user object containing data and place in local storage for access later
       .then(user => {
-        setUserInLocalStorage(user);
+        setUserInSessionStorage(user);
         return user;
       })
   );

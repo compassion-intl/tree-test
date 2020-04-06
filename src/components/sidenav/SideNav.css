@@ -150,11 +150,13 @@
 #login-form > input[type="submit"],
 #register-form > input[type="submit"] {
   background-color: rgba(93, 174, 169, 0.536);
+  color: white;
 }
 
 #login-form > input[type="submit"]:hover,
 #register-form > input[type="submit"]:hover {
   background-color: rgba(133, 205, 200, 0.536);
+  color: rgba(32, 80, 77, 0.536);
 }
 
 label {
@@ -165,4 +167,34 @@ label {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: rgb(106, 106, 106);
+}
+
+.dropdown-menu.dropdown-menu-right.show {
+  transform: translateX(20px);
+  transform: translateY();
+}
+
+#main-nav ul.mr-auto.navbar-nav {
+  justify-content: flex-end !important;
+  margin-right: 0px !important;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.collapse.navbar-collapse p {
+  margin: auto;
+}
+
+ul.mr-auto.navbar-nav li {
+  margin-right: 100px;
+}
+
+#main-nav a.nav-link.nav-link {
+  color: #5d5d5d;
+}
+
+#main-nav span > a {
+  color: #749fce;
 }
