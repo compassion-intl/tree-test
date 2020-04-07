@@ -4,6 +4,9 @@ const API = {
   getNavItems: () => {
     return fetch(`${fb}/navItems.json`).then((e) => e.json());
   },
+  getNavItemsNew: () => {
+    return fetch(`${fb}/navItemsNew.json`).then((e) => e.json());
+  },
   taskComplete: (obj) => {
     return fetch(`${fb}/loggedEntries.json`, {
       method: "POST",

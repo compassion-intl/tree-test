@@ -44,6 +44,17 @@ const HF = {
 
     API.taskComplete(taskData);
   },
+  submitTaskDataNew: (userEyeDee, seconds, clickedItems) => {
+    const taskData = {
+      userId: JSON.parse(userEyeDee).email,
+      section: "New Structure",
+      taskNumber: window.location.pathname.split("/")[1],
+      timeToCompletion: seconds.toFixed(1),
+      itemsClicked: clickedItems,
+    };
+
+    API.taskComplete(taskData);
+  },
 
   calculateAverages: (task) => {
     let taskAvg;
