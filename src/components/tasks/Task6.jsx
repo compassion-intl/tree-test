@@ -22,7 +22,7 @@ const Task6 = () => {
   // other state handlers
   const [hasError, setErrors] = useState(false);
   const [navItems, setNavItems] = useState({});
-  const [taskNum] = useState("Task 1");
+  const [taskNum] = useState("Task 6");
   const [startModal, setStartModal] = useState(false);
   const [endModal, setEndModal] = useState(false);
   const [alert, setAlert] = useState(false);
@@ -43,7 +43,7 @@ const Task6 = () => {
   useEffect(() => window.sessionStorage.setItem("user", userInfo), [userInfo]);
 
   useEffect(() => {
-    (<API className="getNavItemsNew"></API>)()
+    API.getNavItemsNew()
       .then((e) => {
         setNavItems(e);
       })
@@ -84,7 +84,7 @@ const Task6 = () => {
         }}
       >
         <ModalBody>
-          <h4>Task 1</h4>
+          <h4>{taskNum}</h4>
           <p>{taskText}</p>
         </ModalBody>
         <ModalFooter>
