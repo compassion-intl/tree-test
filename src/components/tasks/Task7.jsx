@@ -13,16 +13,16 @@ import {
   ModalFooter,
 } from "reactstrap";
 
-const Task2 = () => {
+const Task7 = () => {
   // change taskText to the instructions given to the user for this task
   const [taskText, setTaskText] = useState(
-    "Where would you go to Volunteer your time at an event?"
+    "Where would you go to find out how to Sponsor a Child?"
   );
 
   // other state handlers
   const [hasError, setErrors] = useState(false);
   const [navItems, setNavItems] = useState({});
-  const [taskNum] = useState("Task 2");
+  const [taskNum] = useState("Task 7");
   const [startModal, setStartModal] = useState(false);
   const [endModal, setEndModal] = useState(false);
   const [alert, setAlert] = useState(false);
@@ -43,7 +43,7 @@ const Task2 = () => {
   useEffect(() => window.sessionStorage.setItem("user", userInfo), [userInfo]);
 
   useEffect(() => {
-    API.getNavItems()
+    API.getNavItemsNew()
       .then((e) => {
         setNavItems(e);
       })
@@ -58,8 +58,8 @@ const Task2 = () => {
     let interval = null;
     if (isActiveTimer) {
       interval = setInterval(() => {
-        setSeconds((seconds) => seconds + 1);
-      }, 1000);
+        setSeconds((seconds) => seconds + 0.1);
+      }, 100);
     } else if (!isActiveTimer && seconds !== 0) {
       clearInterval(interval);
     }
@@ -69,7 +69,7 @@ const Task2 = () => {
   let triggerFinish = () => {
     setEndModal(true);
     toggleActiveTimer();
-    HF.submitTaskData(userInfo, seconds, clickedItems);
+    HF.submitTaskDataNew(userInfo, seconds, clickedItems);
   };
 
   return (
@@ -99,7 +99,7 @@ const Task2 = () => {
           <p>Thank you!</p>
         </ModalBody>
         <ModalFooter>
-          <Button color="info" href="/task-3">
+          <Button color="info" href="/task-8">
             Next Task
           </Button>
         </ModalFooter>
@@ -123,4 +123,4 @@ const Task2 = () => {
   );
 };
 
-export default Task2;
+export default Task7;

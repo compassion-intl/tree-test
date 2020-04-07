@@ -9,13 +9,18 @@ import Task2 from "./tasks/Task2";
 import Task3 from "./tasks/Task3";
 import Task4 from "./tasks/Task4";
 import Task5 from "./tasks/Task5";
+import Task6 from "./tasks/Task6";
+import Task7 from "./tasks/Task7";
+import Task8 from "./tasks/Task8";
+import Task9 from "./tasks/Task9";
+import Task10 from "./tasks/Task10";
 import Admin from "./home/Admin";
 import { getUserFromSessionStorage, logout } from "./login/LoginHandler";
 import App from "../App";
 
 class ApplicationViews extends Component {
   state = {
-    user: getUserFromSessionStorage()
+    user: getUserFromSessionStorage(),
   };
 
   render() {
@@ -24,13 +29,13 @@ class ApplicationViews extends Component {
         <Route
           exact
           path="/"
-          render={props => {
+          render={(props) => {
             return (
               <>
                 <Navbar />
                 <Login
                   {...props}
-                  onLogin={user => this.setState({ user: user })}
+                  onLogin={(user) => this.setState({ user: user })}
                 />
               </>
             );
@@ -39,13 +44,13 @@ class ApplicationViews extends Component {
         <Route
           exact
           path="/register"
-          render={props => {
+          render={(props) => {
             return (
               <>
                 <Navbar />
                 <Register
                   {...props}
-                  onRegister={user => this.setState({ user: user })}
+                  onRegister={(user) => this.setState({ user: user })}
                 />
               </>
             );
@@ -53,7 +58,7 @@ class ApplicationViews extends Component {
         />
         <Route
           path="/task-1"
-          render={props => {
+          render={(props) => {
             return this.state.user ? (
               <>
                 <Navbar />
@@ -66,7 +71,7 @@ class ApplicationViews extends Component {
         />
         <Route
           path="/task-2"
-          render={props => {
+          render={(props) => {
             return this.state.user ? (
               <>
                 <Navbar />
@@ -79,7 +84,7 @@ class ApplicationViews extends Component {
         />
         <Route
           path="/task-3"
-          render={props => {
+          render={(props) => {
             return this.state.user ? (
               <>
                 <Navbar />
@@ -92,7 +97,7 @@ class ApplicationViews extends Component {
         />
         <Route
           path="/task-4"
-          render={props => {
+          render={(props) => {
             return this.state.user ? (
               <>
                 <Navbar />
@@ -105,7 +110,7 @@ class ApplicationViews extends Component {
         ></Route>
         <Route
           path="/task-5"
-          render={props => {
+          render={(props) => {
             return this.state.user ? (
               <>
                 <Navbar />
@@ -117,8 +122,73 @@ class ApplicationViews extends Component {
           }}
         ></Route>
         <Route
+          path="/task-6"
+          render={(props) => {
+            return this.state.user ? (
+              <>
+                <Navbar />
+                <Task6 />
+              </>
+            ) : (
+              <Redirect to="/" />
+            );
+          }}
+        ></Route>
+        <Route
+          path="/task-7"
+          render={(props) => {
+            return this.state.user ? (
+              <>
+                <Navbar />
+                <Task7 />
+              </>
+            ) : (
+              <Redirect to="/" />
+            );
+          }}
+        ></Route>
+        <Route
+          path="/task-8"
+          render={(props) => {
+            return this.state.user ? (
+              <>
+                <Navbar />
+                <Task8 />
+              </>
+            ) : (
+              <Redirect to="/" />
+            );
+          }}
+        ></Route>
+        <Route
+          path="/task-9"
+          render={(props) => {
+            return this.state.user ? (
+              <>
+                <Navbar />
+                <Task9 />
+              </>
+            ) : (
+              <Redirect to="/" />
+            );
+          }}
+        ></Route>
+        <Route
+          path="/task-10"
+          render={(props) => {
+            return this.state.user ? (
+              <>
+                <Navbar />
+                <Task10 />
+              </>
+            ) : (
+              <Redirect to="/" />
+            );
+          }}
+        ></Route>
+        <Route
           path="/admin"
-          render={props => {
+          render={(props) => {
             return this.state.user ? (
               <>
                 <Navbar />

@@ -82,6 +82,41 @@ class NavBar extends Component {
               </UncontrolledDropdown>
               <NavItem>{this.checkIfAdmin()}</NavItem>
             </Nav>
+            <Nav className="mr-auto" navbar>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  Section 2 Tasks
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem>
+                    <NavLink className="nav-link" href="/task-6">
+                      Task 6
+                    </NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink className="nav-link" href="/task-7">
+                      Task 7
+                    </NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink className="nav-link" href="/task-8">
+                      Task 8
+                    </NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink className="nav-link" href="/task-9">
+                      Task 9
+                    </NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink className="nav-link" href="/task-10">
+                      Task 10
+                    </NavLink>
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+              <NavItem>{this.checkIfAdmin()}</NavItem>
+            </Nav>
             <NavbarText style={{ paddingLeft: "30px" }}>
               {this.state.userId !== null ? (
                 <>

@@ -84,7 +84,7 @@ const Task1 = () => {
         }}
       >
         <ModalBody>
-          <h4>Task 1</h4>
+          <h4>{taskNum}</h4>
           <p>{taskText}</p>
         </ModalBody>
         <ModalFooter>

@@ -4,6 +4,9 @@ const API = {
   getNavItems: () => {
     return fetch(`${fb}/navItems.json`).then((e) => e.json());
   },
+  getNavItemsNew: () => {
+    return fetch(`${fb}/navItemsNew.json`).then((e) => e.json());
+  },
   taskComplete: (obj) => {
     return fetch(`${fb}/loggedEntries.json`, {
       method: "POST",
@@ -25,10 +28,21 @@ const API = {
         });
       })
       .then((e) => {
-        console.log(e);
-        let x = e.sort();
-        let y = x.reverse();
-        return y;
+        function compare(a, b) {
+          if (
+            parseInt(a.taskNumber.split("-")[1]) <
+            parseInt(b.taskNumber.split("-")[1])
+          )
+            return -1;
+          if (
+            parseInt(a.taskNumber.split("-")[1]) >
+            parseInt(b.taskNumber.split("-")[1])
+          )
+            return 1;
+          return 0;
+        }
+        let x = e.sort(compare);
+        return x;
       });
   },
   getExistTaskResults: () => {
@@ -43,9 +57,21 @@ const API = {
         });
       })
       .then((e) => {
-        let x = e.sort();
-        let y = x.reverse();
-        return y;
+        function compare(a, b) {
+          if (
+            parseInt(a.taskNumber.split("-")[1]) <
+            parseInt(b.taskNumber.split("-")[1])
+          )
+            return -1;
+          if (
+            parseInt(a.taskNumber.split("-")[1]) >
+            parseInt(b.taskNumber.split("-")[1])
+          )
+            return 1;
+          return 0;
+        }
+        let x = e.sort(compare);
+        return x;
       })
       .then((e) => {
         let desiredResults = e.filter(
@@ -64,9 +90,21 @@ const API = {
         });
       })
       .then((e) => {
-        let x = e.sort();
-        let y = x.reverse();
-        return y;
+        function compare(a, b) {
+          if (
+            parseInt(a.taskNumber.split("-")[1]) <
+            parseInt(b.taskNumber.split("-")[1])
+          )
+            return -1;
+          if (
+            parseInt(a.taskNumber.split("-")[1]) >
+            parseInt(b.taskNumber.split("-")[1])
+          )
+            return 1;
+          return 0;
+        }
+        let x = e.sort(compare);
+        return x;
       })
       .then((e) => {
         let desiredResults = e.filter(
