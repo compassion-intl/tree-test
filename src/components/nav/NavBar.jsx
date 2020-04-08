@@ -13,6 +13,7 @@ import {
   DropdownItem,
   NavbarText,
 } from "reactstrap";
+import { MdPerson, MdAssignment, MdBuild } from "react-icons/md";
 import "./nav.css";
 import { logout, getUserFromSessionStorage } from "../login/LoginHandler";
 
@@ -80,7 +81,6 @@ class NavBar extends Component {
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-              <NavItem>{this.checkIfAdmin()}</NavItem>
             </Nav>
             <Nav className="mr-auto" navbar>
               <UncontrolledDropdown nav inNavbar>
@@ -117,12 +117,15 @@ class NavBar extends Component {
               </UncontrolledDropdown>
               <NavItem>{this.checkIfAdmin()}</NavItem>
             </Nav>
-            <NavbarText style={{ paddingLeft: "30px" }}>
+            <NavbarText style={{ paddingLeft: "30px", fontSize: ".7rem" }}>
               {this.state.userId !== null ? (
                 <>
                   {this.state.userInfo !== null &&
                   this.state.userInfo !== {} ? (
                     <p>
+                      <MdPerson
+                        style={{ marginRight: "10px", color: "#b3b3b3" }}
+                      />
                       {this.state.userInfo.email}
                       <span
                         onClick={() => {

@@ -189,6 +189,7 @@ label {
 
 ul.mr-auto.navbar-nav li {
   margin-right: 30px;
+  font-size: 0.9rem;
 }
 
 #main-nav a.nav-link.nav-link {
@@ -214,4 +215,17 @@ ul.mr-auto.navbar-nav li {
 
 #admin-view a.active.nav-link {
   color: #20c997;
+}
+
+tbody {
+  color: grey;
+  font-size: 0.85rem;
+}
+
+thead {
+  font-size: 0.9rem;
+}
+
+.tab-content {
+  box-shadow: 3px 3px 5px #d6d6d6;
 }

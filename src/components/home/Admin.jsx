@@ -113,7 +113,7 @@ const Admin = () => {
           <TabPane tabId="3">
             <BothTable allTaskResults={allTaskResults} />
           </TabPane>
-          <TabPane tabId="4">
+          <TabPane tabId="4" id="summary-tab">
             <Summary allTaskResults={allTaskResults} />
           </TabPane>
         </TabContent>

@@ -73,60 +73,45 @@ const Summary = (props) => {
         <thead>
           <tr>
             <th>Task #</th>
-            <th>Structure</th>
             <th>Avg. Time to Completion</th>
+            <th># of Results</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>Existing</td>
-            <td>{`${task1Avg} seconds`}</td>
+            <td>1 / 6</td>
+            <td>{`${task1Avg} seconds / ${task6Avg} seconds`}</td>
+            <td>{`${task1 !== undefined ? task1.length : 0} / ${
+              task6 !== undefined ? task6.length : 0
+            }`}</td>
           </tr>
           <tr>
-            <td>2</td>
-            <td>Existing</td>
-            <td>{`${task2Avg} seconds`}</td>
+            <td>2 / 7</td>
+            <td>{`${task2Avg} seconds / ${task7Avg} seconds`}</td>
+            <td>{`${task2 !== undefined ? task2.length : 0} / ${
+              task7 !== undefined ? task7.length : 0
+            }`}</td>
           </tr>
           <tr>
-            <td>3</td>
-            <td>Existing</td>
-            <td>{`${task3Avg} seconds`}</td>
+            <td>3 / 8</td>
+            <td>{`${task3Avg} seconds / ${task8Avg} seconds`}</td>
+            <td>{`${task3 !== undefined ? task3.length : 0} / ${
+              task8 !== undefined ? task8.length : 0
+            }`}</td>
           </tr>
           <tr>
-            <td>4</td>
-            <td>Existing</td>
-            <td>{`${task4Avg} seconds`}</td>
+            <td>4 / 9</td>
+            <td>{`${task4Avg} seconds / ${task9Avg} seconds`}</td>
+            <td>{`${task4 !== undefined ? task4.length : 0} / ${
+              task9 !== undefined ? task9.length : 0
+            }`}</td>
           </tr>
           <tr>
-            <td>5</td>
-            <td>Existing</td>
-            <td>{`${task5Avg} seconds`}</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>New</td>
-            <td>{`${task6Avg} seconds`}</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>New</td>
-            <td>{`${task7Avg} seconds`}</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>New</td>
-            <td>{`${task8Avg} seconds`}</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>New</td>
-            <td>{`${task9Avg} seconds`}</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>New</td>
-            <td>{`${task10Avg} seconds`}</td>
+            <td>5 / 10</td>
+            <td>{`${task5Avg} seconds / ${task10Avg} seconds`}</td>
+            <td>{`${task5 !== undefined ? task5.length : 0} / ${
+              task10 !== undefined ? task10.length : 0
+            }`}</td>
           </tr>
         </tbody>
       </Table>
