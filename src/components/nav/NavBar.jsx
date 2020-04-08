@@ -14,6 +14,7 @@ import {
   NavbarText,
 } from "reactstrap";
 import { MdPerson, MdAssignment, MdBuild } from "react-icons/md";
+import { AiOutlineBranches } from "react-icons/ai";
 import "./nav.css";
 import { logout, getUserFromSessionStorage } from "../login/LoginHandler";
 
@@ -45,7 +46,18 @@ class NavBar extends Component {
     return (
       <div>
         <Navbar color="light" light expand="md" id="main-nav">
-          <NavbarBrand href="/">Tree Testing</NavbarBrand>
+          <NavbarBrand
+            href="/"
+            style={{
+              textTransform: "uppercase",
+              letterSpacing: "3px",
+              fontSize: ".95rem",
+              fontWeight: "600",
+            }}
+          >
+            <AiOutlineBranches style={{ marginRight: "5px" }} />
+            Tree Testing
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="mr-auto" navbar>
