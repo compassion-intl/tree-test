@@ -10,7 +10,7 @@ import {
   Form,
   Button,
   Input,
-  Label
+  Label,
 } from "reactstrap";
 
 export default class Register extends Component {
@@ -19,26 +19,26 @@ export default class Register extends Component {
     username: "",
     password: "",
     modal: false,
-    error: []
+    error: [],
   };
 
-  submit = e => {
+  submit = (e) => {
     e.preventDefault();
 
     let userObject = {
       email: this.state.email,
       username: this.state.username,
       password: this.state.password,
-      role: "User"
+      role: "User",
     };
     register(userObject)
-      .then(newUser => {
+      .then((newUser) => {
         this.props.onRegister(newUser);
       })
       .then(() => {
-        this.props.history.push("/task-1");
+        this.props.history.push("/practice");
       })
-      .catch(error => {
+      .catch((error) => {
         this.setState({ error: error.message });
         this.toggleModal();
       });
@@ -58,26 +58,26 @@ export default class Register extends Component {
               type="text"
               name="Full Name"
               placeholder="Full Name"
-              onChange={e => this.setState({ username: e.target.value })}
+              onChange={(e) => this.setState({ username: e.target.value })}
             />
             <Label for="Email Address">Work Email</Label>
             <Input
               type="email"
               name="Email Address"
               placeholder="username@email.com"
-              onChange={e => this.setState({ email: e.target.value })}
+              onChange={(e) => this.setState({ email: e.target.value })}
             />
             <Label for="Password">Password</Label>
             <Input
               type="password"
               name="Password"
               placeholder="*******"
-              onChange={e => this.setState({ password: e.target.value })}
+              onChange={(e) => this.setState({ password: e.target.value })}
             />
             <Input
               type="submit"
               value="Register"
-              onClick={e => this.submit(e)}
+              onClick={(e) => this.submit(e)}
             />
             <p className="auth-message" style={{ textAlign: "center" }}>
               Already registered? <Link to="/">Log In</Link>
