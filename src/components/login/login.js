@@ -10,7 +10,7 @@ import {
   Form,
   Button,
   Input,
-  Label
+  Label,
 } from "reactstrap";
 import "firebase/auth";
 
@@ -19,17 +19,17 @@ export default class Login extends Component {
     email: "",
     password: "",
     modal: false,
-    error: []
+    error: [],
   };
 
-  submit = e => {
+  submit = (e) => {
     e.preventDefault();
     login(this.state.email, this.state.password)
-      .then(user => {
+      .then((user) => {
         this.props.onLogin(user);
-        this.props.history.push("/task-1");
+        this.props.history.push("/practice");
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error.message);
         this.setState({ error: error.message });
         this.toggleModal();
@@ -50,16 +50,20 @@ export default class Login extends Component {
               type="email"
               name="Email Address"
               placeholder="username@email.com"
-              onChange={e => this.setState({ email: e.target.value })}
+              onChange={(e) => this.setState({ email: e.target.value })}
             />
             <Label for="Password">Password</Label>
             <Input
               type="password"
               name="Password"
               placeholder="*******"
-              onChange={e => this.setState({ password: e.target.value })}
+              onChange={(e) => this.setState({ password: e.target.value })}
             />
-            <Input type="submit" value="Login" onClick={e => this.submit(e)} />
+            <Input
+              type="submit"
+              value="Login"
+              onClick={(e) => this.submit(e)}
+            />
             <p className="auth--message" style={{ textAlign: "center" }}>
               Not registered yet? <Link to="/register">Sign Up</Link>
             </p>

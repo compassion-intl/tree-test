@@ -16,7 +16,7 @@ import {
 const Task7 = () => {
   // change taskText to the instructions given to the user for this task
   const [taskText, setTaskText] = useState(
-    "Where would you go to find out how to Sponsor a Child?"
+    "You want to find out how Compassion uses the money given to them and if they are fiscally responsible."
   );
 
   // other state handlers

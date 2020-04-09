@@ -15,6 +15,7 @@ import Task8 from "./tasks/Task8";
 import Task9 from "./tasks/Task9";
 import Task10 from "./tasks/Task10";
 import Admin from "./home/Admin";
+import Practice from "./tasks/PracticeTask";
 import { getUserFromSessionStorage, logout } from "./login/LoginHandler";
 import App from "../App";
 
@@ -53,6 +54,19 @@ class ApplicationViews extends Component {
                   onRegister={(user) => this.setState({ user: user })}
                 />
               </>
+            );
+          }}
+        />
+        <Route
+          path="/practice"
+          render={(props) => {
+            return this.state.user ? (
+              <>
+                <Navbar />
+                <Practice />
+              </>
+            ) : (
+              <Redirect to="/" />
             );
           }}
         />
