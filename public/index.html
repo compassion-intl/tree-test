@@ -37,5 +37,16 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="text/javascript">
+      (function () {
+        var qtm = document.createElement("script");
+        qtm.type = "text/javascript";
+        qtm.async = 1;
+        qtm.src =
+          "https://cdn.quantummetric.com/qscripts/quantum-compassion.js";
+        var d = document.getElementsByTagName("script")[0];
+        !window.QuantumMetricAPI && d.parentNode.insertBefore(qtm, d);
+      })();
+    </script>
   </body>
 </html>
