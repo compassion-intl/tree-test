@@ -1,11 +1,6 @@
 {
-  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
   "rules": {
-    "users": {".indexOn": "id"},
-    "loggedEntries": {".indexOn": "taskNumber"},
-    "navItems": {".indexOn": "navId"},
-    "navItemsNew": {".indexOn": "navId"},
-    ".read": true,
-    ".write": true
+    ".read": "auth != null",
+    ".write": "auth != null"
   }
 }
